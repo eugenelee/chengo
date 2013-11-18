@@ -1,11 +1,14 @@
 import tornado.ioloop
 import tornado.web
 import subprocess
+from subprocess import Popen, PIPE
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
 #        self.write(execfile("chengo.py chen.txt"))
-        self.write(subprocess.call("python chengo.py chen.txt", shell=True))
+        output = Popen(['python', 'chengo.py', 'chen.txt'], stdout=PIPE).communicate()[0]
+        self.write(output)
+#        self.write(subprocess.call("python chengo.py chen.txt", shell=True))
 #import subprocess
 
 #subprocess.call("test1.py", shell=True)
