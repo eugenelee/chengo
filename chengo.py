@@ -121,7 +121,7 @@ def parse_args():
 
     return parser.parse_args()
 
-def load_words(filenamey):
+def load_words(filename):
     """Load words from a file.
 
     Every line is to be considered as one word.
