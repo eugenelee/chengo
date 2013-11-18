@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 """
 Chengo! The Chen Bingo Card Generator
 =====================================
@@ -11,28 +10,6 @@ Chengo! The Chen Bingo Card Generator
 The idea is to complete a full row, column, or diagonal within a period with Dr. Chen.
 
 Python 2.7, Jinja2
-
-Changelog
----------
-
-- Read words file with UTF-8 encoding to support non-ASCII characters.
-
-- Switched template engine from Genshi to Jinja 2 to get more control over
-  whitespace handling.
-
-- Changed argument parser from optparse_ to argparse_.
-
-
-.. _Buzzword Bingo: http://en.wikipedia.org/wiki/Buzzword_bingo
-.. _Firefox:        http://www.mozilla.com/firefox/
-.. _Python:         http://www.python.org/
-.. _Jinja2:         http://jinja.pocoo.org/
-.. _argparse:       http://code.google.com/p/argparse/
-.. _optparse:       http://docs.python.org/library/optparse.html
-
-:Copyright: 2007-2012 `Jochen Kupperschmidt <http://homework.nwsnet.de/>`_
-:Date: 12-Jun-2012 (previous release: 09-Nov-2007)
-:License: MIT
 """
 
 from __future__ import with_statement
@@ -42,9 +19,9 @@ from collections import namedtuple
 from itertools import chain, islice, izip_longest, repeat
 from random import randrange, sample
 import sys
+import cgi
 
 from jinja2 import Environment
-
 
 Field = namedtuple('Field', ['type', 'value'])
 
@@ -144,7 +121,7 @@ def parse_args():
 
     return parser.parse_args()
 
-def load_words(filename):
+def load_words(chen.txt):
     """Load words from a file.
 
     Every line is to be considered as one word.
