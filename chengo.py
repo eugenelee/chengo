@@ -31,8 +31,8 @@ TEMPLATE = """\
     <style>
       @media print {html,body {margin: 0;}}
       h1 {font-size: 6mm;}
-      table {border-color: #666666;border-spacing: 0;border-style: solid;border-width: 0 0.25mm 0.25mm 0;margin-bottom: 1cm;}
-      td {border-color: #666666;border-style: solid;border-width: 0.25mm 0 0 0.25mm;font-size: 4mm;height: 2cm;text-align: center;width: 3cm;}
+      table {border-color: black;border-spacing: 0;border-style: solid;border-width: 0 0.5mm 0.5mm 0;margin-bottom: 1cm;}
+      td {border-color: black;border-style: solid;border-width: 0.5mm 0 0 0.5mm;font-size: 4mm;height: 2cm;text-align: center;width: 3cm;}
       td strong {font-size: 120%;text-transform: uppercase;}
     </style>
     <title>Chengo Generator</title>
