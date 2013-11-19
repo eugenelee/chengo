@@ -36,6 +36,7 @@ TEMPLATE = """\
       td strong {font-size: 120%;text-transform: uppercase;}
     </style>
     <title>Chengo Generator</title>
+  <script type="text/javascript" >function toggle(object) {if ( object.style.backgroundColor == '' || object.style.backgroundColor == undefined ) {object.style.backgroundColor = 'green';} else {object.style.backgroundColor = '';}}</script>
   </head>
   <body>
     {%- for table in tables %}
@@ -44,7 +45,7 @@ TEMPLATE = """\
       {%- for row in table %}
       <tr>
         {%- for field in row %}
-        <td>
+        <td onclick="toggle(this);">
           {%- if field.type == 'normal' -%}
             {{ field.value }}
           {%- elif field.type == 'bonus' -%}
